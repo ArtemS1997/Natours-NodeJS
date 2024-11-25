@@ -4,7 +4,7 @@ export const displayMap = (locations) => {
   // const locations = JSON.parse(
   //   document.getElementById('map').dataset.locations,
   // );
-  console.log(locations);
+  //console.log(locations);
 
   const customIcon = L.icon({
     iconUrl: '/img/pin.png', // Path to your custom icon image

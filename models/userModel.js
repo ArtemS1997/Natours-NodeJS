@@ -81,7 +81,7 @@ userSchema.methods.correctPassword = async function (
   userPassword,
 ) {
   //we cannot use this.password because of property select:false
-  console.log('!!!!!!!!!!!!!!!!!!!!', this.password);
+  //console.log('!!!!!!!!!!!!!!!!!!!!', this.password);
   return await bcrypt.compare(candidatePassword, userPassword);
 };
 
@@ -107,7 +107,7 @@ userSchema.methods.createPasswordResetToken = function () {
     .update(resetToken)
     .digest('hex');
 
-  console.log({ resetToken }, this.passwordResetToken);
+  //console.log({ resetToken }, this.passwordResetToken);
 
   this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
 

@@ -5,8 +5,6 @@ import { login, logout } from './login.js';
 import { updateSettings } from './updateSettings.js';
 import { bookTour } from './stripe.js';
 
-console.log('HIHIHI');
-
 // DOM ELEMENTS
 const mapBox = document.getElementById('map');
 const loginForm = document.querySelector('.form--login');
@@ -38,7 +36,7 @@ if (userDataForm)
     form.append('name', document.getElementById('name').value);
     form.append('email', document.getElementById('email').value);
     form.append('photo', document.getElementById('photo').files[0]);
-    console.log(form);
+    //console.log(form);
 
     updateSettings(form, 'data');
   });

@@ -46,7 +46,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     passwordChangedAt: req.body.passwordChangedAt,
     role: req.body.role,
   });
-  console.log(newUser.email);
+  //console.log(newUser.email);
   const url = `${req.protocol}://${req.get('host')}/me`;
   await new Email(newUser, url).sendWelcome();
 
@@ -83,7 +83,7 @@ exports.logout = (req, res) => {
 
 exports.protect = catchAsync(async (req, res, next) => {
   // 1) Getting token and check of it's there
-  console.log('protect  ', req.headers.authorization, '  ', req.cookies.jwt);
+  //console.log('protect  ', req.headers.authorization, '  ', req.cookies.jwt);
   let token;
   if (
     req.headers.authorization &&

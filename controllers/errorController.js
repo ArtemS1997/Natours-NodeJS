@@ -8,7 +8,7 @@ const handleCastErrorDB = (err) => {
 const handleDublicateFieldsDB = (err) => {
   const value = err.errorResponse.errmsg.match(/(["'])(\\?.)*?\1/)[0];
   const message = `Dubpicate field value: ${value}. Plase use another value!`;
-  console.log(message);
+  //console.log(message);
   return new AppError(message, 400);
 };
 
@@ -67,7 +67,7 @@ const sendErrorProd = (err, req, res) => {
   // B) RENDERED WEBSITE
   // A) Operational, trusted error: send message to client
   if (err.isOperational) {
-    console.log(err);
+    //console.log(err);
     return res.status(err.statusCode).render('error', {
       title: 'Something went wrong!',
       msg: err.message,
