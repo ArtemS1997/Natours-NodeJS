@@ -79,6 +79,9 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Limit requests from same API
+
+app.set('trust proxy', 1); // Trust the proxy Render uses
+
 const limiter = rateLimit({
   max: 100,
   windowMs: 60 * 60 * 1000,
